@@ -1,0 +1,497 @@
+:root {
+    --primary-blue: #1a73e8;
+    --light-blue: #e8f0fe;
+    --hover-blue: #d2e3fc;
+    --dark-blue: #174ea6;
+    --weekend-blue: #4285f4;
+    --selected-green: #34a853;  /* Google green */
+    --selected-light-green: #e6f4ea;  /* Light green for hover */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1vh 6vw;
+    background-color: #f8f9fc;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: var(--primary-blue);
+}
+
+.controls {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(340px, 380px));
+    gap: 3.5vw;
+    padding: 1vw;
+    align-items: start;
+    max-width: 1500px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* First two months stay the same */
+.month-calendar:nth-child(1) { grid-column: 1; grid-row: 1; }
+.month-calendar:nth-child(2) { grid-column: 2; grid-row: 1; }
+
+
+
+/* Row 2 (months 3-5) */
+.month-calendar:nth-child(4) { grid-column: 1; grid-row: 2; }
+.month-calendar:nth-child(5) { grid-column: 2; grid-row: 2; }
+.month-calendar:nth-child(6) { grid-column: 3; grid-row: 2; }
+
+/* Row 3 (months 6-8) */
+.month-calendar:nth-child(7) { grid-column: 1; grid-row: 3; }
+.month-calendar:nth-child(8) { grid-column: 2; grid-row: 3; }
+.month-calendar:nth-child(9) { grid-column: 3; grid-row: 3; }
+
+/* Row 4 (months 9-11) */
+.month-calendar:nth-child(10) { grid-column: 1; grid-row: 4; }
+.month-calendar:nth-child(11) { grid-column: 2; grid-row: 4; }
+.month-calendar:nth-child(12) { grid-column: 3; grid-row: 4; }
+
+/* Row 5 (months 12-14) */
+.month-calendar:nth-child(13) { grid-column: 1; grid-row: 5; }
+.month-calendar:nth-child(14) { grid-column: 2; grid-row: 5; }
+.month-calendar:nth-child(15) { grid-column: 3; grid-row: 5; }
+
+/* Row 6 (months 15-17) */
+.month-calendar:nth-child(16) { grid-column: 1; grid-row: 6; }
+.month-calendar:nth-child(17) { grid-column: 2; grid-row: 6; }
+.month-calendar:nth-child(18) { grid-column: 3; grid-row: 6; }
+
+/* Row 7 (months 18-20) */
+.month-calendar:nth-child(19) { grid-column: 1; grid-row: 7; }
+.month-calendar:nth-child(20) { grid-column: 2; grid-row: 7; }
+.month-calendar:nth-child(21) { grid-column: 3; grid-row: 7; }
+
+/* Row 8 (months 21-23) */
+.month-calendar:nth-child(22) { grid-column: 1; grid-row: 8; }
+.month-calendar:nth-child(23) { grid-column: 2; grid-row: 8; }
+.month-calendar:nth-child(24) { grid-column: 3; grid-row: 8; }
+
+/* Row 9 (months 24-26) */
+.month-calendar:nth-child(25) { grid-column: 1; grid-row: 9; }
+.month-calendar:nth-child(26) { grid-column: 2; grid-row: 9; }
+.month-calendar:nth-child(27) { grid-column: 3; grid-row: 9; }
+
+/* Row 10 (months 27-29) */
+.month-calendar:nth-child(28) { grid-column: 1; grid-row: 10; }
+.month-calendar:nth-child(29) { grid-column: 2; grid-row: 10; }
+.month-calendar:nth-child(30) { grid-column: 3; grid-row: 10; }
+
+/* Row 11 (months 30-32) */
+.month-calendar:nth-child(31) { grid-column: 1; grid-row: 11; }
+.month-calendar:nth-child(32) { grid-column: 2; grid-row: 11; }
+.month-calendar:nth-child(33) { grid-column: 3; grid-row: 11; }
+
+/* Row 12 (months 33-35) */
+.month-calendar:nth-child(34) { grid-column: 1; grid-row: 12; }
+.month-calendar:nth-child(35) { grid-column: 2; grid-row: 12; }
+.month-calendar:nth-child(36) { grid-column: 3; grid-row: 12; }
+
+/* Row 13 (months 36-38) */
+.month-calendar:nth-child(37) { grid-column: 1; grid-row: 13; }
+.month-calendar:nth-child(38) { grid-column: 2; grid-row: 13; }
+.month-calendar:nth-child(39) { grid-column: 3; grid-row: 13; }
+
+/* Row 14 (months 39-41) */
+.month-calendar:nth-child(40) { grid-column: 1; grid-row: 14; }
+.month-calendar:nth-child(41) { grid-column: 2; grid-row: 14; }
+.month-calendar:nth-child(42) { grid-column: 3; grid-row: 14; }
+
+/* Row 15 (months 42-44) */
+.month-calendar:nth-child(43) { grid-column: 1; grid-row: 15; }
+.month-calendar:nth-child(44) { grid-column: 2; grid-row: 15; }
+.month-calendar:nth-child(45) { grid-column: 3; grid-row: 15; }
+
+/* Row 16 (months 45-47) */
+.month-calendar:nth-child(46) { grid-column: 1; grid-row: 16; }
+.month-calendar:nth-child(47) { grid-column: 2; grid-row: 16; }
+.month-calendar:nth-child(48) { grid-column: 3; grid-row: 16; }
+
+/* Row 17 (months 48-50) */
+.month-calendar:nth-child(49) { grid-column: 1; grid-row: 17; }
+.month-calendar:nth-child(50) { grid-column: 2; grid-row: 17; }
+.month-calendar:nth-child(51) { grid-column: 3; grid-row: 17; }
+
+/* Row 18 (months 51-53) */
+.month-calendar:nth-child(52) { grid-column: 1; grid-row: 18; }
+.month-calendar:nth-child(53) { grid-column: 2; grid-row: 18; }
+.month-calendar:nth-child(54) { grid-column: 3; grid-row: 18; }
+
+/* Row 19 (months 54-56) */
+.month-calendar:nth-child(55) { grid-column: 1; grid-row: 19; }
+.month-calendar:nth-child(56) { grid-column: 2; grid-row: 19; }
+.month-calendar:nth-child(57) { grid-column: 3; grid-row: 19; }
+
+/* Row 20 (months 57-59) */
+.month-calendar:nth-child(58) { grid-column: 1; grid-row: 20; }
+.month-calendar:nth-child(59) { grid-column: 2; grid-row: 20; }
+.month-calendar:nth-child(60) { grid-column: 3; grid-row: 20; }
+
+/* Row 21 (months 60-62) */
+.month-calendar:nth-child(61) { grid-column: 1; grid-row: 21; }
+.month-calendar:nth-child(62) { grid-column: 2; grid-row: 21; }
+.month-calendar:nth-child(63) { grid-column: 3; grid-row: 21; }
+
+/* Grey theme styles for first month */
+.month-calendar:nth-child(1) h3 {
+    color: #343a40;  /* Darker text for header */
+}
+
+.month-calendar:nth-child(1) .calendar th {
+    background-color: #dee2e6;  /* Darker header background */
+    color: #343a40;  /* Darker text */
+}
+
+.month-calendar:nth-child(1) .calendar td {
+    border-color: #adb5bd;  /* Darker grey border for the grey theme month */
+}
+
+.month-calendar:nth-child(1) .calendar td:hover {
+    background-color: #dee2e6;  /* Darker hover state */
+}
+
+.month-calendar:nth-child(1) .weekend {
+    background-color: #dadde2;  /* Darker grey background (was #e2e6ea) */
+    color: #495057;  /* Keep existing darker text color */
+}
+
+.month-calendar:nth-child(1) .selected {
+    background-color: #495057;  /* Darker selected state */
+    color: white;
+}
+
+.month-calendar:nth-child(1) .selected:hover {
+    background-color: #495057;
+}
+
+.month-calendar {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
+    padding: 1vh;
+    width: auto;
+    font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+/* Remove hover effect for the larger month */
+.month-calendar:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #fff;  /* Reset background */
+    padding: 1.5vh 2vh;  /* Adjust vertical and horizontal padding */
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+    width: 95%;  /* Control the width */
+    margin: 0 auto;  /* Center the calendar */
+}
+
+/* Make the header more prominent */
+.month-calendar:nth-child(2) h3 {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--dark-blue);
+    margin-bottom: 20px;  /* More space below header */
+}
+
+/* Style the calendar table */
+.month-calendar:nth-child(2) .calendar {
+    border-radius: 8px;
+    overflow: hidden;  /* Keep rounded corners */
+    width: 100%;  /* Make table fill the container */
+}
+
+.month-calendar:nth-child(2) .calendar th {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 8px;
+}
+
+.month-calendar:nth-child(2) .calendar td {
+    border: 1px solid #e1e7fd;
+}
+
+.month-calendar h3 {
+    margin: 0 0 15px 0;
+    text-align: center;
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+}
+
+.calendar th, .calendar td {
+    border: 1px solid #c0c7e0;  /* Changed from #e1e7fd to a darker blue-grey */
+    padding: 8px;
+    text-align: center;
+}
+
+.calendar th {
+    background-color: var(--light-blue);
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--dark-blue);
+}
+
+.calendar td {
+    height: clamp(45px, 6vh, 52px);
+    width: clamp(45px, 5.5vw, 55px);
+    position: relative;
+    padding: 4px;
+    text-align: center;
+}
+
+.calendar td:hover {
+    background-color: var(--hover-blue);
+    cursor: pointer;
+}
+
+.weekend {
+    background-color: #eef1f8;  /* Darker blue-grey background (was #f8f9fc) */
+    color: var(--weekend-blue);
+}
+
+#dateSelector {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 2px solid var(--light-blue);
+    border-radius: 8px;
+    color: var(--dark-blue);
+    transition: all 0.2s ease;
+}
+
+#dateSelector:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+label {
+    margin-right: 10px;
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) {
+    .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.selected {
+    background-color: var(--selected-green);
+    color: white;
+    font-weight: bold;
+}
+
+.selected:hover {
+    background-color: var(--selected-green);  /* Keep the green background even on hover */
+}
+
+/* Adjust hover effect for the larger month */
+.month-calendar:nth-child(2):hover {
+    transform: none;
+    width:none;
+}
+
+.event-text {
+    font-size: min(0.65em, 9px);
+    color: #e91e63;
+    font-weight: bold;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 2px;
+    z-index: 1;
+}
+
+.date-number {
+    font-size: 1.1em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.day-count {
+    font-size: clamp(0.55em, 0.55vw, 0.55em);
+    color: rgb(231, 127, 231);
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Keep day count white when cell is selected */
+.selected .day-count {
+    color: white;
+}
+
+/* Weekend hover states */
+.weekend:hover {
+    background-color: var(--hover-blue) !important;
+}
+
+.month-calendar:nth-child(1) .weekend:hover {
+    background-color: #d1d5da !important;  /* Darker hover state for grey theme */
+}
+
+.day-count.multiple-30 {
+    background-color: #808080;  /* Gray background */
+    color: white;              /* White text */
+    padding: 1px 3px;         /* Some padding */
+    border-radius: 3px;       /* Rounded corners */
+}
+
+/* Keep the styling consistent when selected */
+.selected .day-count.multiple-30 {
+    background-color: white;
+    color: var(--selected-green);
+}
+
+.event-item {
+    cursor: help;  /* Show question mark cursor on hover */
+}
+
+/* Optional: If you want a custom tooltip style instead of the default browser tooltip */
+.event-item:hover {
+    text-decoration: underline;
+}
+
+.event-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #e91e63;
+    border-radius: 50%;
+    margin: 0 auto;
+    cursor: help;
+}
+
+/* Remove the tooltip styles since we're using native title tooltip */
+.event-tooltip, .event-tooltip-item {
+    display: none;
+}
+
+/* Update the cell positioning to accommodate the new elements */
+.calendar td {
+    position: relative;
+    /* ... existing styles ... */
+}
+
+/* Adjust day count position to not overlap with new counters */
+.day-count {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* ... existing styles ... */
+}
+
+.sequence-number {
+    color: rgb(231, 127, 231);  /* Same pink as the day count */
+    margin-left: 0.5em;
+}
+
+/* Style for current month (second month) heading */
+.month-calendar:nth-child(2) h3 {
+    font-weight: 700;  /* Make it bolder than the default 500 */
+}
+
+/* Add this style for matching future dates */
+.day-count.future-match {
+    background-color: var(--selected-green);
+    color: white;
+    padding: 1px 3px;
+    border-radius: 3px;
+    cursor: help;  /* Add cursor to indicate tooltip */
+}
+
+/* Hide the clear button in the date picker */
+#dateSelector::-webkit-clear-button {
+    display: none;
+}
+
+/* For Firefox */
+#dateSelector::-moz-clear-button {
+    display: none;
+}
+
+/* For Edge */
+#dateSelector::-ms-clear {
+    display: none;
+}
+
+.stats-box {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(26, 115, 232, 0.1);
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.stats-item {
+    color: var(--dark-blue);
+    font-size: 1.1em;
+    text-align: left;  /* Changed from center to left */
+    display: flex;
+    justify-content: space-between;  /* Space between text and value */
+    align-items: center;
+}
+
+.stats-value {
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.stats-header {
+    margin-bottom: 15px;
+    color: #e91e63;  /* Bright pink, same as event dots */
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.stats-header strong {
+    font-weight: 700;
+}
+
