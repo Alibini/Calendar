@@ -1,9 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
+    <header>
+        <h1>Calendar</h1>
+    </header>
+    <div class="controls">
+        <label for="dateSelector">Select Date:</label>
+        <input type="date" id="dateSelector" required lang="en-GB" aria-label="Date selector">
+    </div>
+    <div id="calendar-container" role="region" aria-label="Calendar"></div>
+    <script>
+        // Add the event data back
+        const eventData = {
+            "events": [
+            {"date": "2024-01-01", "text": "NZ", "description": "New Zealand, New Year's Day"},
+{"date": "2024-02-06", "text": "NZ", "description": "New Zealand, Waitangi Day"},
+{"date": "2024-03-29", "text": "NZ", "description": "New Zealand, Good Friday"},
+{"date": "2024-04-01", "text": "NZ", "description": "New Zealand, Easter Monday"},
+{"date": "2024-04-25", "text": "NZ", "description": "New Zealand, ANZAC Day"},
+{"date": "2024-06-03", "text": "NZ", "description": "New Zealand, Queen's Birthday"},
+{"date": "2024-10-28", "text": "NZ", "description": "New Zealand, Labour Day"},
+{"date": "2024-12-25", "text": "NZ", "description": "New Zealand, Christmas Day"},
+{"date": "2024-12-26", "text": "NZ", "description": "New Zealand, Boxing Day"},
+{"date": "2024-01-01", "text": "AU", "description": "Australia, New Year's Day"},
+{"date": "2024-01-26", "text": "AU", "description": "Australia, Australia Day"},
+{"date": "2024-03-04", "text": "AU", "description": "Australia, Labour Day (Western Australia)"},
+{"date": "2024-03-29", "text": "AU", "description": "Australia, Good Friday"},
+{"date": "2024-04-01", "text": "AU", "description": "Australia, Easter Monday"},
+{"date": "2024-04-25", "text": "AU", "description": "Australia, ANZAC Day"},
+{"date": "2024-06-10", "text": "AU", "description": "Australia, Queen's Birthday (Most states)"},
+{"date": "2024-10-07", "text": "AU", "description": "Australia, Labour Day (ACT,NSW,SA)"},
+{"date": "2024-11-05", "text": "AU", "description": "Australia, Melbourne Cup Day (Victoria)"},
+{"date": "2024-12-25", "text": "AU", "description": "Australia, Christmas Day"},
+{"date": "2024-12-26", "text": "AU", "description": "Australia, Boxing Day"},
+{"date": "2024-01-01", "text": "CA", "description": "Canada, New Year's Day"},
+{"date": "2024-02-19", "text": "CA", "description": "Canada, Family Day (Some provinces)"},
+{"date": "2024-03-29", "text": "CA", "description": "Canada, Good Friday"},
+{"date": "2024-04-01", "text": "CA", "description": "Canada, Easter Monday"},
+{"date": "2024-05-20", "text": "CA", "description": "Canada, Victoria Day"},
+{"date": "2024-07-01", "text": "CA", "description": "Canada, Canada Day"},
+{"date": "2024-08-05", "text": "CA", "description": "Canada, Civic Holiday"},
+{"date": "2024-09-02", "text": "CA", "description": "Canada, Labor Day"},
+{"date": "2024-10-14", "text": "CA", "description": "Canada, Thanksgiving"},
+{"date": "2024-11-11", "text": "CA", "description": "Canada, Remembrance Day"},
+{"date": "2024-12-25", "text": "CA", "description": "Canada, Christmas Day"},
+{"date": "2024-12-26", "text": "CA", "description": "Canada, Boxing Day"},
+{"date": "2025-01-01", "text": "NZ", "description": "New Zealand, New Year's Day"},
+{"date": "2025-02-06", "text": "NZ", "description": "New Zealand, Waitangi Day"},
+{"date": "2025-04-18", "text": "NZ", "description": "New Zealand, Good Friday"},
+{"date": "2025-04-21", "text": "NZ", "description": "New Zealand, Easter Monday"},
+{"date": "2025-04-25", "text": "NZ", "description": "New Zealand, ANZAC Day"},
+{"date": "2025-06-02", "text": "NZ", "description": "New Zealand, Queen's Birthday"},
+{"date": "2025-10-27", "text": "NZ", "description": "New Zealand, Labour Day"},
+{"date": "2025-12-25", "text": "NZ", "description": "New Zealand, Christmas Day"},
+{"date": "2025-12-26", "text": "NZ", "description": "New Zealand, Boxing Day"},
+{"date": "2025-01-01", "text": "AU", "description": "Australia, New Year's Day"},
+{"date": "2025-01-26", "text": "AU", "description": "Australia, Australia Day"},
+{"date": "2025-03-03", "text": "AU", "description": "Australia, Labour Day (Western Australia)"},
+{"date": "2025-04-18", "text": "AU", "description": "Australia, Good Friday"},
+{"date": "2025-04-21", "text": "AU", "description": "Australia, Easter Monday"},
+{"date": "2025-04-25", "text": "AU", "description": "Australia, ANZAC Day"},
+{"date": "2025-06-09", "text": "AU", "description": "Australia, Queen's Birthday (Most states)"},
+{"date": "2025-10-06", "text": "AU", "description": "Australia, Labour Day (ACT,NSW,SA)"},
+{"date": "2025-11-04", "text": "AU", "description": "Australia, Melbourne Cup Day (Victoria)"},
+{"date": "2025-12-25", "text": "AU", "description": "Australia, Christmas Day"},
+{"date": "2025-12-26", "text": "AU", "description": "Australia, Boxing Day"},
+{"date": "2025-01-01", "text": "CA", "description": "Canada, New Year's Day"},
+{"date": "2025-02-17", "text": "CA", "description": "Canada, Family Day (Some provinces)"},
+{"date": "2025-04-18", "text": "CA", "description": "Canada, Good Friday"},
+{"date": "2025-04-21", "text": "CA", "description": "Canada, Easter Monday"},
+{"date": "2025-05-19", "text": "CA", "description": "Canada, Victoria Day"},
+{"date": "2025-07-01", "text": "CA", "description": "Canada, Canada Day"},
+{"date": "2025-08-04", "text": "CA", "description": "Canada, Civic Holiday"},
+{"date": "2025-09-01", "text": "CA", "description": "Canada, Labor Day"},
+{"date": "2025-10-13", "text": "CA", "description": "Canada, Thanksgiving"},
+{"date": "2025-11-11", "text": "CA", "description": "Canada, Remembrance Day"},
+{"date": "2025-12-25", "text": "CA", "description": "Canada, Christmas Day"},
+{"date": "2025-12-26", "text": "CA", "description": "Canada, Boxing Day"},
+{"date": "2024-01-01", "text": "UK", "description": "UK, New Year's Day"},
+{"date": "2024-03-29", "text": "UK", "description": "UK, Good Friday"},
+{"date": "2024-04-01", "text": "UK", "description": "UK, Easter Monday"},
+{"date": "2024-05-06", "text": "UK", "description": "UK, Early May Bank Holiday"},
+{"date": "2024-08-05", "text": "UK", "description": "UK, Summer Bank Holiday (Scotland)"},
+{"date": "2024-05-27", "text": "UK", "description": "UK, Spring Bank Holiday"},
+{"date": "2024-08-26", "text": "UK", "description": "UK, Labour Day (UK wide)"},
+{"date": "2024-12-25", "text": "UK", "description": "UK, Christmas Day"},
+{"date": "2024-12-26", "text": "UK", "description": "UK, Boxing Day"},
+{"date": "2025-01-01", "text": "UK", "description": "UK, New Year's Day"},
+{"date": "2025-04-18", "text": "UK", "description": "UK, Good Friday"},
+{"date": "2025-04-21", "text": "UK", "description": "UK, Easter Monday"},
+{"date": "2025-05-05", "text": "UK", "description": "UK, Early May Bank Holiday"},
+{"date": "2025-08-04", "text": "UK", "description": "UK, Summer Bank Holiday (Scotland)"},
+{"date": "2025-05-26", "text": "UK", "description": "UK, Spring Bank Holiday"},
+{"date": "2025-08-25", "text": "UK", "description": "UK, Labour Day (UK wide)"},
+{"date": "2025-12-25", "text": "UK", "description": "UK, Christmas Day"},
+{"date": "2025-12-26", "text": "UK", "description": "UK, Boxing Day"},
+{"date": "2024-01-01", "text": "US", "description": "US, New Year's Day"},
+{"date": "2024-01-15", "text": "US", "description": "US, Martin Luther King Jr. Day"},
+{"date": "2024-02-19", "text": "US", "description": "US, Presidents' Day"},
+{"date": "2024-05-27", "text": "US", "description": "US, Memorial Day"},
+{"date": "2024-07-04", "text": "US", "description": "US, Independence Day"},
+{"date": "2024-09-02", "text": "US", "description": "US, Labor Day"},
+{"date": "2024-10-14", "text": "US", "description": "US, Columbus Day"},
+{"date": "2024-11-11", "text": "US", "description": "US, Veterans Day"},
+{"date": "2024-11-28", "text": "US", "description": "US, Thanksgiving Day"},
+{"date": "2024-12-25", "text": "US", "description": "US, Christmas Day"},
+{"date": "2025-01-01", "text": "US", "description": "US, New Year's Day"},
+{"date": "2025-01-20", "text": "US", "description": "US, Martin Luther King Jr. Day"},
+{"date": "2025-02-17", "text": "US", "description": "US, Presidents' Day"},
+{"date": "2025-05-26", "text": "US", "description": "US, Memorial Day"},
+{"date": "2025-07-04", "text": "US", "description": "US, Independence Day"},
+{"date": "2025-09-01", "text": "US", "description": "US, Labor Day"},
+{"date": "2025-10-13", "text": "US", "description": "US, Columbus Day"},
+{"date": "2025-11-11", "text": "US", "description": "US, Veterans Day"},
+{"date": "2025-11-27", "text": "US", "description": "US, Thanksgiving Day"},
+{"date": "2025-12-25", "text": "US", "description": "US, Christmas Day"}
+            ]
+        };
+    </script>
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
